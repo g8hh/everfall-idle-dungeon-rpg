@@ -4426,7 +4426,7 @@ ctx.fill();
     if (this.color === '#f59e0b' && (enemyName === 'Treasure Guardian' || !enemyName)) {
         // TREASURE GUARDIAN - MASSIVE 4X SIZE with bags of gold
         const scale = 1.0;;
-        console.log('💰💰💰 RENDERING TREASURE GUARDIAN! Scale:', scale);
+        // // console.log('💰💰💰 RENDERING TREASURE GUARDIAN! Scale:', scale);
 
         // Larger golden aura
         const auraGradient = ctx.createRadialGradient(x, y, 0, x, y, 50 * scale);
@@ -6442,7 +6442,7 @@ ctx.fill();
 			} else if (enemyName === 'Treasure Guardian') {
     // TREASURE GUARDIAN - MASSIVE 2X SIZE with bags of gold
     const scale = 4.0; // 4x bigger to match shadow!
-    console.log('💰 Treasure Guardian scale:', scale, 'Shadow should be:', 35 * scale);
+    // // console.log('💰 Treasure Guardian scale:', scale, 'Shadow should be:', 35 * scale);
 
     // Larger golden aura
     const auraGradient = ctx.createRadialGradient(x, y, 0, x, y, 50 * scale);
@@ -6614,7 +6614,7 @@ ctx.fill();
     ctx.fill();
 } else if (enemyName === 'Keystone Warden' || (enemyName.includes('Warden') && !enemyName.includes('Hound'))) {
         // KEYSTONE WARDEN - VAULT GUARDIAN
-        console.log('✅ RENDERING KEYSTONE WARDEN NOW');
+        // // console.log('✅ RENDERING KEYSTONE WARDEN NOW');
         const scale = 1.0;
     // ... rest of Keystone Warden code
 
@@ -6744,8 +6744,8 @@ ctx.fill();
         ctx.fillRect(x + 14.4, y - 16, 3.2, 24);
         ctx.fillRect(x + 12.8, y - 17.6, 6.4, 3.2);
     } else if (enemyName.includes('Guardian')) {
-        console.log('🔥 RENDERING CUSTOM RUNE GUARDIAN!');
-        console.log('Guardian rendering - enemyName:', enemyName);
+        // // console.log('🔥 RENDERING CUSTOM RUNE GUARDIAN!');
+        // // console.log('Guardian rendering - enemyName:', enemyName);
         // RUNE GUARDIAN BOSS - MASSIVE AND TERRIFYING
         const scale = 2.5; // 2.5x bigger than normal
 
@@ -7759,9 +7759,9 @@ class Paladin extends Character {
                     // Track total shields granted in stats
                     if (window.game.characterStats && window.game.characterStats[this.name]) {
                         window.game.characterStats[this.name].healingDone += totalShieldAmount;
-                        console.log(`✅ ${this.name} shield tracked: +${totalShieldAmount} to healing (Total: ${window.game.characterStats[this.name].healingDone})`);
+                        // // console.log(`✅ ${this.name} shield tracked: +${totalShieldAmount} to healing (Total: ${window.game.characterStats[this.name].healingDone})`);
                     } else {
-                        console.warn(`⚠️ Failed to track ${this.name} shields - characterStats not initialized`);
+                        // console.warn(`⚠️ Failed to track ${this.name} shields - characterStats not initialized`);
                     }
 
                     const percentDisplay = Math.round(shieldStrength * 100);
@@ -10120,12 +10120,12 @@ document.querySelectorAll('.dungeon-banner').forEach(banner => {
 
 
             setDungeonBackground(dungeonType, imageUrl) {
-    console.log('🎨 setDungeonBackground called with:', dungeonType, imageUrl);
-    console.log('🎨 Current dungeon:', this.currentDungeon);
+    // // console.log('🎨 setDungeonBackground called with:', dungeonType, imageUrl);
+    // // console.log('🎨 Current dungeon:', this.currentDungeon);
 
     const mainView = document.getElementById('main-view');
     if (!mainView) {
-        console.error('❌ main-view element not found!');
+        // console.error('❌ main-view element not found!');
         return;
     }
 
@@ -10143,15 +10143,15 @@ document.querySelectorAll('.dungeon-banner').forEach(banner => {
 
     if (!finalImageUrl) {
         // No background - use default gradient
-        console.log('ℹ️ No background image, using default gradient');
+        // // console.log('ℹ️ No background image, using default gradient');
         mainView.style.backgroundImage = '';
         mainView.style.backgroundColor = 'linear-gradient(135deg, #0a0e27 0%, #151935 100%)';
         return;
     }
 
     // Set the background with dark overlay
-    console.log('🖼️ Setting background to:', finalImageUrl);
-    console.log('🎮 Dungeon type:', dungeonType);
+    // // console.log('🖼️ Setting background to:', finalImageUrl);
+    // // console.log('🎮 Dungeon type:', dungeonType);
     mainView.style.backgroundColor = '#0a0e27';
 
     // Special divine golden overlay for Divine Arena (toned down)
@@ -10181,8 +10181,8 @@ document.querySelectorAll('.dungeon-banner').forEach(banner => {
     mainView.style.backgroundPosition = 'center';
     mainView.style.backgroundRepeat = 'no-repeat';
 
-    console.log('✅ Background set successfully!');
-    console.log('📸 Final background image style:', mainView.style.backgroundImage);
+    // // console.log('✅ Background set successfully!');
+    // // console.log('📸 Final background image style:', mainView.style.backgroundImage);
 }
 openSkillTree(characterIndex) {
     if (this.skillTreeOpen) return;
@@ -10866,7 +10866,7 @@ openSkillTree(characterIndex) {
                             }
                         }
                     } catch (e) {
-                        console.log('Could not load saved data');
+                        // // console.log('Could not load saved data');
                     }
                 }
                 }
@@ -12717,7 +12717,7 @@ closeBtn.style.cssText = `
                         if (data.characters && data.characters[charKey] && data.characters[charKey].totalStats) {
                             const runeSlotCount = data.characters[charKey].totalStats.runeSlots || 0;
 
-                            console.log(`${charKey} has ${runeSlotCount} rune slots from skill tree`);
+                            // // console.log(`${charKey} has ${runeSlotCount} rune slots from skill tree`);
 
                             // Update slots based on skill tree count
                             for (let i = 0; i < 5; i++) {
@@ -12727,7 +12727,7 @@ closeBtn.style.cssText = `
                                 if (shouldBeUnlocked && !wasUnlocked) {
                                     // Unlock slot
                                     this.runeSlots[charKey][i] = true;
-                                    console.log(`Unlocked ${charKey} rune slot ${i + 1}`);
+                                    // // console.log(`Unlocked ${charKey} rune slot ${i + 1}`);
                                 } else if (!shouldBeUnlocked && wasUnlocked) {
                                     // Lock slot and unequip if needed
                                     if (this.equippedRunes[charKey][i]) {
@@ -12762,14 +12762,14 @@ closeBtn.style.cssText = `
                                         }
                                     }
                                     this.runeSlots[charKey][i] = false;
-                                    console.log(`Locked ${charKey} rune slot ${i + 1}`);
+                                    // // console.log(`Locked ${charKey} rune slot ${i + 1}`);
                                 }
                             }
                         }
                     });
                 }
 
-                console.log('Final rune slots state:', this.runeSlots);
+                // // console.log('Final rune slots state:', this.runeSlots);
             }
 
             applySkillTreeStats(member) {
@@ -13771,7 +13771,7 @@ rollPetRarity() {
                 const bonus = pet.getCurrentBonus();
                 const bonusType = pet.bonusType;
 
-                console.log(`Applying pet bonus to ${member.name}: ${bonusType} +${bonus}`);
+                // // console.log(`Applying pet bonus to ${member.name}: ${bonusType} +${bonus}`);
                     const oldValue = bonusType === 'hp' ? member.maxHp :
                                     bonusType === 'mana' ? member.maxMana :
                                     bonusType === 'attack' ? member.attack :
@@ -13839,14 +13839,14 @@ rollPetRarity() {
                                     bonusType === 'hpRegen' ? member.hpRegen :
                                     bonusType === 'cdr' ? member.cdr : 0;
 
-                    console.log(`${member.name} ${bonusType}: ${oldValue} -> ${newValue}`);
+                    // // console.log(`${member.name} ${bonusType}: ${oldValue} -> ${newValue}`);
             }
 
             removePetBonus(pet, member) {
                 const bonus = pet.getCurrentBonus();
                 const bonusType = pet.bonusType;
 
-                console.log(`Removing pet bonus from ${member.name}: ${bonusType} -${bonus}`);
+                // // console.log(`Removing pet bonus from ${member.name}: ${bonusType} -${bonus}`);
                     if (bonusType === 'attack') {
                         member.attack = Math.max(1, member.attack - bonus);
                     }
@@ -14086,9 +14086,9 @@ this.party.forEach(member => {
     if (selector) selector.style.display = 'none';
 
     // Set Rune Trial background
-    console.log('🔮 SETTING RUNE TRIAL BACKGROUND NOW');
+    // // console.log('🔮 SETTING RUNE TRIAL BACKGROUND NOW');
     this.setDungeonBackground('runetrial', 'runetrial.png');
-    console.log('🔮 RUNE TRIAL BACKGROUND SET COMPLETE');
+    // // console.log('🔮 RUNE TRIAL BACKGROUND SET COMPLETE');
 
     // Position party in a circle around the pillar (15, 15)
     const formations = {
@@ -14290,9 +14290,9 @@ const selector = document.getElementById('dungeon-selector');
 if (selector) selector.style.display = 'none';
 
 // Set Vault background
-console.log('🔑 SETTING VAULT BACKGROUND NOW');
+// // console.log('🔑 SETTING VAULT BACKGROUND NOW');
 this.setDungeonBackground('vault', 'vault%20room.png');
-console.log('🔑 VAULT BACKGROUND SET COMPLETE');
+// // console.log('🔑 VAULT BACKGROUND SET COMPLETE');
 
     const formations = {
         0: {x: 15, y: 20},  // Tank front center
@@ -14381,7 +14381,7 @@ if (this.enemies.length > 0 && this.enemies[0].isAlive) {
             }
 
             enterVault(keystoneId) {
-                console.log('🚪 ENTER VAULT FUNCTION CALLED! Key ID:', keystoneId);
+                // console.log('🚪 ENTER VAULT FUNCTION CALLED! Key ID:', keystoneId);
                 const keystoneIndex = this.keystones.findIndex(k => k.id === keystoneId);
                 if (keystoneIndex === -1) return;
 
@@ -14424,9 +14424,9 @@ if (this.enemies.length > 0 && this.enemies[0].isAlive) {
                 });
 
                 // Set Vault background IMMEDIATELY (no timeout needed)
-                console.log('🔑 ABOUT TO SET VAULT BACKGROUND');
+                // console.log('🔑 ABOUT TO SET VAULT BACKGROUND');
                 this.setDungeonBackground('vault', 'vault%20room.png');
-                console.log('🔑 VAULT BACKGROUND CALL COMPLETE');
+                // console.log('🔑 VAULT BACKGROUND CALL COMPLETE');
 
                 this.spawnVaultBoss();
                 setTimeout(() => this.startBattle(), 1500);
@@ -14475,7 +14475,7 @@ selectDungeon(dungeonType) {
 
     // Handle Divine Arena dungeon
     if (dungeonType === 'endlessblessings') {
-        console.log('🌟 Entering Divine Arena dungeon...');
+        // console.log('🌟 Entering Divine Arena dungeon...');
 
         // CHECK COOLDOWN FIRST - same as other dungeons
         if (this.currentDungeon) {
@@ -14660,7 +14660,7 @@ selectDungeon(dungeonType) {
         }
 
         // Spawn initial 5 enemies immediately
-        console.log('🌟 Spawning initial wave...');
+        // console.log('🌟 Spawning initial wave...');
 
         // SAFETY CHECK: Ensure no weak enemies exist before spawning
         if (this.enemies.length > 0) {
@@ -14675,10 +14675,10 @@ selectDungeon(dungeonType) {
 
         this.addLog('⚔️ Divine Arena! Survive endless waves!', 'room');
         this.addLog('💎 Blessing Rewards: 1/kill (1-19), 2/kill (20-29), 3/kill (30-39), 4/kill (40-49), 5/kill (50+)', 'loot');
-        console.log('✅ Divine Arena setup complete!');
-        console.log(`   - Enemy Level: ${this.endlessEnemyLevel}`);
-        console.log(`   - Enemies: ${this.enemies.length}/${this.endlessMaxEnemies}`);
-        console.log(`   - Battle Mode: ${this.inBattle}`);
+        // console.log('✅ Divine Arena setup complete!');
+        // console.log(`   - Enemy Level: ${this.endlessEnemyLevel}`);
+        // console.log(`   - Enemies: ${this.enemies.length}/${this.endlessMaxEnemies}`);
+        // console.log(`   - Battle Mode: ${this.inBattle}`);
         return;
     }
 
@@ -14727,7 +14727,7 @@ selectDungeon(dungeonType) {
                     this.dungeonFloor = Math.max(1, this.globalStats.farthestFloor - 9);
                 }
 
-                console.log(`🎯 Dungeon Switch: ${dungeonType} | Floor: ${this.dungeonFloor}`);
+                // console.log(`🎯 Dungeon Switch: ${dungeonType} | Floor: ${this.dungeonFloor}`);
 
                 this.lastDungeonChangeTime = now;
                 this.hideDungeonSelector();
@@ -14796,7 +14796,7 @@ generateDungeon() {
                 this.movingToNextRoom = false;  // Reset room movement flag
                 this.battleTimer = 0;
 
-                console.log(`🏰 Generating Dungeon: ${this.currentDungeon} | Floor: ${this.dungeonFloor}`);
+                // console.log(`🏰 Generating Dungeon: ${this.currentDungeon} | Floor: ${this.dungeonFloor}`);
 
                 this.dungeonLayout = new DungeonLayout(this.dungeonFloor);
                 const startRoom = this.dungeonLayout.getCurrentRoom();
@@ -14841,7 +14841,7 @@ enterRoom(roomData) {
                     return;
                 }
 
-                console.log(`🚪 Entering Room: Type=${roomData.type} | Dungeon=${this.currentDungeon} | Floor=${this.dungeonFloor}`);
+                // console.log(`🚪 Entering Room: Type=${roomData.type} | Dungeon=${this.currentDungeon} | Floor=${this.dungeonFloor}`);
 
                 // Clear any existing enemies from previous room
                 this.enemies = [];
@@ -15123,7 +15123,7 @@ updateRoomLabel(roomData) {
             }
 
 spawnEnemies(roomType) {
-    console.log(`👹 Spawning Enemies: Dungeon=${this.currentDungeon} | Floor=${this.dungeonFloor} | Room=${roomType}`);
+    // console.log(`👹 Spawning Enemies: Dungeon=${this.currentDungeon} | Floor=${this.dungeonFloor} | Room=${roomType}`);
 
     // Reset phoenix flag at the start of each battle
     this.party.forEach(member => {
@@ -15214,13 +15214,13 @@ spawnEnemies(roomType) {
 }
 
 spawnRuneTrialBoss() {
-    console.log('🔵 spawnRuneTrialBoss() called!');
+    // console.log('🔵 spawnRuneTrialBoss() called!');
 
     const tier = this.runeTrialTier;
-    console.log('Tier:', tier);
+    // console.log('Tier:', tier);
     this._unitPositionsChanged = true;
 
-    console.log('=== SPAWNING RUNE TRIAL BOSS ===');
+    // console.log('=== SPAWNING RUNE TRIAL BOSS ===');
 
     // Initialize Rune Trial mechanics
     this.runeTrialPillarCharging = true;
@@ -15237,8 +15237,8 @@ spawnRuneTrialBoss() {
         gridY: 15
     };
 
-    console.log('Pillar created at:', this.runeTrialPillar.gridX, this.runeTrialPillar.gridY);
-    console.log('Pillar charging:', this.runeTrialPillarCharging);
+    // console.log('Pillar created at:', this.runeTrialPillar.gridX, this.runeTrialPillar.gridY);
+    // console.log('Pillar charging:', this.runeTrialPillarCharging);
 
 
 
@@ -15257,7 +15257,7 @@ spawnRuneTrialBoss() {
     // Create pillar UI
     this.createRuneTrialPillarUI();
 
-    console.log('=== RUNE TRIAL SETUP COMPLETE ===');
+    // console.log('=== RUNE TRIAL SETUP COMPLETE ===');
 }
 
 spawnEndlessEnemies() {
@@ -16004,7 +16004,7 @@ spawnBoss() {
             moveToNextRoom() {
                 // Prevent multiple simultaneous room transitions
                 if (this.movingToNextRoom || this.transitioningFloor) {
-                    console.log('⚠️ Room transition already in progress');
+                    // console.log('⚠️ Room transition already in progress');
                     return;
                 }
 
@@ -16960,7 +16960,7 @@ const closeVictoryScreen = () => {
 							tooltip.style.top = `${rect.top - 100}px`;
 							tooltip.style.transform = 'translateY(-100%)';
 
-                            console.log('Tooltip shown at:', tooltip.style.left, tooltip.style.top);
+                            // console.log('Tooltip shown at:', tooltip.style.left, tooltip.style.top);
                         });
 
                         itemDiv.addEventListener('mouseleave', () => {
@@ -17467,7 +17467,7 @@ drawMinimap() {
                 const combatStatsContainer = document.getElementById('combat-stats-container');
                 if (combatStatsContainer) {
                     combatStatsContainer.style.display = 'flex';
-                    console.log('✅ Combat stats container shown for battle');
+                    // console.log('✅ Combat stats container shown for battle');
                     this.updateCharacterStatsDisplay();
                 } else {
                     console.warn('⚠️ Combat stats container not found!');
@@ -19153,7 +19153,7 @@ if (now - this.lastRegenTime >= 3000) {
                 // Track HP regen in stats
                 if (this.characterStats && this.characterStats[member.name]) {
                     this.characterStats[member.name].healingDone += hpRegenAmount;
-                    console.log(`🌿 ${member.name} HP regen tracked: +${hpRegenAmount} (Total healing: ${this.characterStats[member.name].healingDone})`);
+                    // console.log(`🌿 ${member.name} HP regen tracked: +${hpRegenAmount} (Total healing: ${this.characterStats[member.name].healingDone})`);
                 }
             }
             if (manaRegenAmount > 0 && member.mana < totalMaxMana) {
@@ -19183,7 +19183,7 @@ if (now - this.lastRegenTime >= 3000) {
                 const keystonesOnCD = this.party.filter(m => m.keystoneCooldown > 0).length;
                 if (keystonesOnCD > 0) {
                     const cdDetails = this.party.filter(m => m.keystoneCooldown > 0).map(m => `${m.name}:${m.keystoneCooldown.toFixed(1)}s`).join(', ');
-                    console.log(`[TICK] Calling updateAbilityIndicators (inBattle=${this.inBattle}, keystones on CD: ${cdDetails})`);
+                    // console.log(`[TICK] Calling updateAbilityIndicators (inBattle=${this.inBattle}, keystones on CD: ${cdDetails})`);
                 }
                 this.updateAbilityIndicators();
 
@@ -19544,7 +19544,7 @@ performPartyAttack(member, aliveEnemies) {
                             // Use the keystone ability
                             member.keystoneCooldown = member.keystoneMaxCooldown;
                             member.lastKeystoneCooldownTime = Date.now(); // Reset the time tracker when keystone activates
-                            console.log(`[KEYSTONE] ${member.name} used ${equippedKeystone.internalName}, cooldown set to ${member.keystoneCooldown}s (max: ${member.keystoneMaxCooldown}s)`);
+                            // console.log(`[KEYSTONE] ${member.name} used ${equippedKeystone.internalName}, cooldown set to ${member.keystoneCooldown}s (max: ${member.keystoneMaxCooldown}s)`);
 
                             if (keystoneManaCost > 0) {
                                 member.mana -= keystoneManaCost; // Deduct mana cost only if > 0
@@ -19783,7 +19783,7 @@ performPartyAttack(member, aliveEnemies) {
                                 // Track total shields granted in stats
                                 if (this.characterStats && this.characterStats[member.name]) {
                                     this.characterStats[member.name].healingDone += totalShieldAmount;
-                                    console.log(`✅ ${member.name} Divine Guardian shield tracked: +${totalShieldAmount} to healing (Total: ${this.characterStats[member.name].healingDone})`);
+                                    // console.log(`✅ ${member.name} Divine Guardian shield tracked: +${totalShieldAmount} to healing (Total: ${this.characterStats[member.name].healingDone})`);
                                 } else {
                                     console.warn(`⚠️ Failed to track ${member.name} Divine Guardian shields - characterStats not initialized`);
                                 }
@@ -19819,7 +19819,7 @@ performPartyAttack(member, aliveEnemies) {
 
                     // Log before checking cooldown to verify we reach this code
                     if (member.keystoneCooldown !== undefined && member.keystoneCooldown !== 0) {
-                        console.log(`[CD CHECK] ${member.name} has keystoneCooldown=${member.keystoneCooldown}, about to reduce...`);
+                        // console.log(`[CD CHECK] ${member.name} has keystoneCooldown=${member.keystoneCooldown}, about to reduce...`);
                     }
 
                     // Reduce keystone cooldown using real time (consistent with regular abilities)
@@ -19835,12 +19835,12 @@ performPartyAttack(member, aliveEnemies) {
                         const reduction = elapsed * cooldownMultiplier;
 
                         // Log every reduction to see if it's happening
-                        console.log(`[CD REDUCTION] ${member.name} keystone: ${member.keystoneCooldown.toFixed(2)}s -> ${(member.keystoneCooldown - reduction).toFixed(2)}s (elapsed: ${elapsed.toFixed(3)}s, reduction: ${reduction.toFixed(3)}s, CDR: ${cdr}%)`);
+                        // console.log(`[CD REDUCTION] ${member.name} keystone: ${member.keystoneCooldown.toFixed(2)}s -> ${(member.keystoneCooldown - reduction).toFixed(2)}s (elapsed: ${elapsed.toFixed(3)}s, reduction: ${reduction.toFixed(3)}s, CDR: ${cdr}%)`);
 
                         member.keystoneCooldown -= reduction;
 
                         if (member.keystoneCooldown <= 0) {
-                            console.log(`[CD COMPLETE] ${member.name} keystone cooldown finished!`);
+                            // console.log(`[CD COMPLETE] ${member.name} keystone cooldown finished!`);
                             member.keystoneCooldown = 0;
                             member.lastKeystoneCooldownTime = undefined; // Reset tracker when cooldown completes
                             member._lastCDLog = undefined;
@@ -20090,7 +20090,7 @@ if (member.className === 'Healer') {
                                     // Track lifesteal healing in stats
                                     if (this.characterStats && this.characterStats[member.name]) {
                                         this.characterStats[member.name].healingDone += healAmount;
-                                        console.log(`💉 ${member.name} lifesteal tracked: +${healAmount} (Total healing: ${this.characterStats[member.name].healingDone})`);
+                                        // console.log(`💉 ${member.name} lifesteal tracked: +${healAmount} (Total healing: ${this.characterStats[member.name].healingDone})`);
                                     }
                                 }
                             }
@@ -21311,7 +21311,7 @@ showKeystoneTooltip(data, event) {
                 if (!slotsGrid || !runeList) return;
 
                 // Debug: Log current state
-                console.log(`Showing runes for ${charType}:`, {
+                // console.log(`Showing runes for ${charType}:`, {
                     slots: this.runeSlots[charType],
                     equipped: this.equippedRunes[charType]
                 });
@@ -22924,7 +22924,7 @@ addLog(message, type = '') {
                 const keystonesOnCD = this.party.filter(m => m.keystoneCooldown > 0);
                 if (keystonesOnCD.length > 0) {
                     const cdDetails = keystonesOnCD.map(m => `${m.name}:${m.keystoneCooldown.toFixed(1)}s`).join(', ');
-                    console.log(`[UI UPDATE] Updating ability indicators (${keystonesOnCD.length} keystones on CD: ${cdDetails})`);
+                    // console.log(`[UI UPDATE] Updating ability indicators (${keystonesOnCD.length} keystones on CD: ${cdDetails})`);
                 }
 
                 this.party.forEach((member, index) => {
@@ -22957,7 +22957,7 @@ addLog(message, type = '') {
 
                         // Log if this member has a keystone on cooldown
                         if (member.keystoneCooldown > 0) {
-                            console.log(`[UI MEMBER] ${member.name} (index ${index}) has keystoneCooldown=${member.keystoneCooldown.toFixed(2)}s, equippedKeystone=${!!equippedKeystone}`);
+                            // console.log(`[UI MEMBER] ${member.name} (index ${index}) has keystoneCooldown=${member.keystoneCooldown.toFixed(2)}s, equippedKeystone=${!!equippedKeystone}`);
                         }
 
                         if (equippedKeystone) {
@@ -22968,7 +22968,7 @@ addLog(message, type = '') {
                             if (member.keystoneCooldown === undefined) member.keystoneCooldown = 0;
                             if (member.keystoneMaxCooldown === undefined || member.keystoneMaxCooldown !== equippedKeystone.ability.cooldown) {
                                 member.keystoneMaxCooldown = equippedKeystone.ability.cooldown;
-                                console.log(`[UI INIT] ${member.name} keystoneMaxCooldown set to ${member.keystoneMaxCooldown}s`);
+                                // console.log(`[UI INIT] ${member.name} keystoneMaxCooldown set to ${member.keystoneMaxCooldown}s`);
                             }
 
                             const cooldownPercent = member.keystoneMaxCooldown > 0 ? ((member.keystoneMaxCooldown - member.keystoneCooldown) / member.keystoneMaxCooldown) * 100 : 100;
@@ -22978,7 +22978,7 @@ addLog(message, type = '') {
                             const shouldLog = !member._lastUILog || now - member._lastUILog > 1000;
 
                             if (member.keystoneCooldown > 0 && shouldLog) {
-                                console.log(`[UI STATE] ${member.name} keystone: CD=${member.keystoneCooldown.toFixed(2)}s / ${member.keystoneMaxCooldown}s (${cooldownPercent.toFixed(1)}% complete), fill exists=${!!fill}, current className="${ability2.className}"`);
+                                // console.log(`[UI STATE] ${member.name} keystone: CD=${member.keystoneCooldown.toFixed(2)}s / ${member.keystoneMaxCooldown}s (${cooldownPercent.toFixed(1)}% complete), fill exists=${!!fill}, current className="${ability2.className}"`);
                                 member._lastUILog = now;
                             }
 
@@ -22988,28 +22988,28 @@ addLog(message, type = '') {
                                 const newDashArray = fill.getAttribute('stroke-dasharray');
 
                                 if (member.keystoneCooldown > 0 && shouldLog) {
-                                    console.log(`[UI RENDER] ${member.name} keystone fill: "${oldDashArray}" -> "${newDashArray}"`);
+                                    // console.log(`[UI RENDER] ${member.name} keystone fill: "${oldDashArray}" -> "${newDashArray}"`);
                                 }
                             } else {
                                 if (member.keystoneCooldown > 0 && shouldLog) {
-                                    console.log(`[UI ERROR] ${member.name} keystone: SVG fill element NOT FOUND!`);
+                                    // console.log(`[UI ERROR] ${member.name} keystone: SVG fill element NOT FOUND!`);
                                 }
                             }
 
                             // Debug logging for cooldown state
                             if (member.keystoneCooldown > 0 && member.keystoneCooldown === member.keystoneMaxCooldown) {
-                                console.log(`[UI ALERT] ${member.name} keystone JUST ACTIVATED!`);
+                                // console.log(`[UI ALERT] ${member.name} keystone JUST ACTIVATED!`);
                             }
 
                             const newClassName = member.keystoneCooldown > 0 ? 'ability-indicator on-cooldown' : 'ability-indicator ready';
 
                             // Always log class state when on cooldown (for debugging)
                             if (member.keystoneCooldown > 0 && shouldLog) {
-                                console.log(`[UI CLASS] ${member.name} current className="${ability2.className}", should be="${newClassName}", match=${ability2.className === newClassName}`);
+                                // console.log(`[UI CLASS] ${member.name} current className="${ability2.className}", should be="${newClassName}", match=${ability2.className === newClassName}`);
                             }
 
                             if (ability2.className !== newClassName) {
-                                console.log(`[UI CHANGE] ${member.name} keystone class: "${ability2.className}" -> "${newClassName}"`);
+                                // console.log(`[UI CHANGE] ${member.name} keystone class: "${ability2.className}" -> "${newClassName}"`);
                                 ability2.className = newClassName;
                             }
 
@@ -23226,7 +23226,7 @@ updateEnemyHealthBars() {
 
 
 			rebuildUI() {
-    console.log('rebuildUI called - current HP:', this.party.map(m => ({name: m.name, hp: m.hp, maxHp: m.maxHp})));
+    // console.log('rebuildUI called - current HP:', this.party.map(m => ({name: m.name, hp: m.hp, maxHp: m.maxHp})));
 
     // ... rest of rebuildUI code
                 const container = document.getElementById('party-container');
@@ -24545,7 +24545,7 @@ if (shouldRunBattleTick) {
 
             cleanup() {
                 if (this.destroyed) return;
-                console.log('🧹 Cleaning up game resources...');
+                // console.log('🧹 Cleaning up game resources...');
 
                 this.destroyed = true;
                 this.paused = true;
@@ -24574,7 +24574,7 @@ if (shouldRunBattleTick) {
                 if (this.visualEffects) this.visualEffects.length = 0;
                 if (this.loot) this.loot.length = 0;
 
-                console.log('✅ Game cleanup complete');
+                // console.log('✅ Game cleanup complete');
             }
 
             getRarityColor(rarity) {
@@ -24951,7 +24951,7 @@ if (item.rarity === 'mythic') {
                     saveNotification.style.opacity = '0';
                 }, 2000);
 
-                console.log('Game saved');
+                // console.log('Game saved');
                 return true;
             } catch (e) {
                 console.error('Save error:', e);
@@ -24962,14 +24962,14 @@ if (item.rarity === 'mythic') {
         window.loadGame = () => {
             // Don't load if game hasn't been initialized yet
             if (!window.game) {
-                console.log('Game not initialized yet, skipping load');
+                // console.log('Game not initialized yet, skipping load');
                 return false;
             }
 
             try {
                 const saveString = localStorage.getItem('rpg_dungeon_save');
                 if (!saveString) {
-                    console.log('No save found');
+                    // console.log('No save found');
                     return false;
                 }
 
@@ -24978,7 +24978,7 @@ if (item.rarity === 'mythic') {
                 // Version check - reject old saves
                 const CURRENT_VERSION = '2.0.0';
                 if (!data.version || data.version !== CURRENT_VERSION) {
-                    console.log(`Old save version detected (${data.version || 'unknown'}). Clearing incompatible save.`);
+                    // console.log(`Old save version detected (${data.version || 'unknown'}). Clearing incompatible save.`);
                     localStorage.removeItem('rpg_dungeon_save');
                     localStorage.removeItem('skillTreeData');
                     localStorage.removeItem('gameSkillTreeData');
@@ -24988,7 +24988,7 @@ if (item.rarity === 'mythic') {
                     return false;
                 }
 
-                console.log('Loading save from:', new Date(data.timestamp));
+                // console.log('Loading save from:', new Date(data.timestamp));
 
                 // Restore all basic properties
                 window.game.gold = data.gold || 0;
@@ -25236,7 +25236,7 @@ item.getStatsDisplay = function() {
                 game.keystones = game.keystones.filter(ks => {
                     const ksKey = `${ks.name}-${ks.level}-${ks.rarity}-${JSON.stringify(ks.stats)}-${JSON.stringify(ks.ability)}`;
                     if (equippedKeys.has(ksKey)) {
-                        console.log('Removed duplicate unequipped keystone:', ks.name);
+                        // console.log('Removed duplicate unequipped keystone:', ks.name);
                         return false; // Remove from inventory
                     }
                     return true; // Keep in inventory
@@ -25247,7 +25247,7 @@ item.getStatsDisplay = function() {
                 game.keystones = game.keystones.filter(ks => {
                     const key = `${ks.name}-${ks.level}-${ks.rarity}-${JSON.stringify(ks.stats)}-${JSON.stringify(ks.ability)}`;
                     if (seenUnequipped.has(key)) {
-                        console.log('Removed duplicate in inventory:', ks.name);
+                        // console.log('Removed duplicate in inventory:', ks.name);
                         return false;
                     }
                     seenUnequipped.add(key);
@@ -25282,7 +25282,7 @@ item.getStatsDisplay = function() {
                 game.runes = game.runes.filter(rune => {
                     const runeKey = `${rune.name}-${rune.tier}-${rune.emoji}-${JSON.stringify(rune.statType)}-${JSON.stringify(rune.percentBonus)}`;
                     if (equippedRuneKeys.has(runeKey)) {
-                        console.log('Removed duplicate unequipped rune:', rune.name);
+                        // console.log('Removed duplicate unequipped rune:', rune.name);
                         return false; // Remove from inventory
                     }
                     return true; // Keep in inventory
@@ -25293,7 +25293,7 @@ item.getStatsDisplay = function() {
                 game.runes = game.runes.filter(rune => {
                     const key = `${rune.name}-${rune.tier}-${rune.emoji}-${JSON.stringify(rune.statType)}-${JSON.stringify(rune.percentBonus)}`;
                     if (seenUnequippedRunes.has(key)) {
-                        console.log('Removed duplicate rune in inventory:', rune.name);
+                        // console.log('Removed duplicate rune in inventory:', rune.name);
                         return false;
                     }
                     seenUnequippedRunes.add(key);
@@ -25363,7 +25363,7 @@ item.getStatsDisplay = function() {
                 // Remove any unequipped pets that match equipped ones by ID
                 game.pets = game.pets.filter(pet => {
                     if (equippedPetKeys.has(pet.id)) {
-                        console.log('Removed duplicate unequipped pet:', pet.name);
+                        // console.log('Removed duplicate unequipped pet:', pet.name);
                         return false; // Remove from inventory
                     }
                     return true; // Keep in inventory
@@ -25373,7 +25373,7 @@ item.getStatsDisplay = function() {
                 const seenUnequippedPetIds = new Set();
                 game.pets = game.pets.filter(pet => {
                     if (seenUnequippedPetIds.has(pet.id)) {
-                        console.log('Removed duplicate pet in inventory:', pet.name);
+                        // console.log('Removed duplicate pet in inventory:', pet.name);
                         return false;
                     }
                     seenUnequippedPetIds.add(pet.id);
@@ -25393,7 +25393,7 @@ item.getStatsDisplay = function() {
                 game.rebuildUI();
                 game.updateUI();
 
-                console.log('Game loaded');
+                // console.log('Game loaded');
                 return true;
             } catch (e) {
                 console.error('Load error:', e);
@@ -25427,7 +25427,7 @@ item.getStatsDisplay = function() {
         try {
             firebase.initializeApp(firebaseConfig);
             db = firebase.firestore();
-            console.log('✅ Firebase leaderboard connected');
+            // console.log('✅ Firebase leaderboard connected');
         } catch (error) {
             console.error('❌ Firebase error:', error);
         }
@@ -25435,8 +25435,8 @@ item.getStatsDisplay = function() {
         // GAME VERSION - Change this to reset leaderboards
         const GAME_VERSION = 'v3';
         const LEADERBOARD_COLLECTION = `leaderboard_${GAME_VERSION}`;
-        console.log(`🎮 Game Version: ${GAME_VERSION}`);
-        console.log(`📊 Leaderboard Collection: ${LEADERBOARD_COLLECTION}`);
+        // console.log(`🎮 Game Version: ${GAME_VERSION}`);
+        // console.log(`📊 Leaderboard Collection: ${LEADERBOARD_COLLECTION}`);
 
         // Calculate total gear score using game's existing method
         window.calculateGearScore = function() {
@@ -25459,7 +25459,7 @@ item.getStatsDisplay = function() {
         // Submit score to leaderboard
         window.submitToLeaderboard = async function() {
             if (!db) {
-                console.log('Firebase not initialized');
+                // console.log('Firebase not initialized');
                 return;
             }
 
@@ -25560,7 +25560,7 @@ item.getStatsDisplay = function() {
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 }, { merge: true });
 
-                console.log('✅ Score submitted to leaderboard!');
+                // console.log('✅ Score submitted to leaderboard!');
                 game.addLog(`Score submitted! Floor ${floor}, Gear Score ${gearScore}`, 'gold');
             } catch (error) {
                 console.error('Error submitting score:', error);
@@ -26128,29 +26128,29 @@ document.addEventListener('fullscreenchange', function() {
 // Helper function to debug keystone cooldowns - accessible from console
 window.checkKeystones = function() {
     if (!window.game || !window.game.party) {
-        console.log('Game not loaded yet');
+        // console.log('Game not loaded yet');
         return;
     }
 
-    console.log('=== KEYSTONE STATUS ===');
-    console.log(`In Battle: ${window.game.inBattle}`);
-    console.log(`Enemies: ${window.game.enemies ? window.game.enemies.length : 0}`);
-    console.log('');
+    // console.log('=== KEYSTONE STATUS ===');
+    // console.log(`In Battle: ${window.game.inBattle}`);
+    // console.log(`Enemies: ${window.game.enemies ? window.game.enemies.length : 0}`);
+    // console.log('');
 
     window.game.party.forEach((member, i) => {
         const keystoneType = member.className.toLowerCase();
         const equipped = window.game.equippedKeystones[keystoneType];
 
-        console.log(`[${i}] ${member.name} (${member.className})`);
-        console.log(`   Keystone: ${equipped ? equipped.internalName : 'NONE'}`);
-        console.log(`   Cooldown: ${member.keystoneCooldown !== undefined ? member.keystoneCooldown.toFixed(2) : 'undefined'}s`);
-        console.log(`   Max CD: ${member.keystoneMaxCooldown !== undefined ? member.keystoneMaxCooldown : 'undefined'}s`);
-        console.log(`   Last CD Time: ${member.lastKeystoneCooldownTime ? 'set' : 'not set'}`);
-        console.log('');
+        // console.log(`[${i}] ${member.name} (${member.className})`);
+        // console.log(`   Keystone: ${equipped ? equipped.internalName : 'NONE'}`);
+        // console.log(`   Cooldown: ${member.keystoneCooldown !== undefined ? member.keystoneCooldown.toFixed(2) : 'undefined'}s`);
+        // console.log(`   Max CD: ${member.keystoneMaxCooldown !== undefined ? member.keystoneMaxCooldown : 'undefined'}s`);
+        // console.log(`   Last CD Time: ${member.lastKeystoneCooldownTime ? 'set' : 'not set'}`);
+        // console.log('');
     });
 };
 
-console.log('💡 Type checkKeystones() in console to see keystone status');
+// console.log('💡 Type checkKeystones() in console to see keystone status');
 
 
 
@@ -26172,10 +26172,10 @@ window.openInventory = function() {
         window.game.showInventory();
     }
 
-    console.log('📦 Switched to Inventory tab');
+    // console.log('📦 Switched to Inventory tab');
 };
 
-console.log('📦 Type openInventory() to view your items');
+// console.log('📦 Type openInventory() to view your items');
 
 // Show detailed drop table for Divine Arena
 window.showDropTable = function() {
