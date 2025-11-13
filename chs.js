@@ -267,7 +267,7 @@ var cnItems = {
     "Pet Collection": "宠物收藏",
     "Room is clear": "房间已清理",
     "Rune Inventory": "符文库存",
-    "Rune Trial": "符文试验",
+    "Rune Trial": "符文试炼",
     "RUNES": "符文",
     "Select an Item to Bless": "选择一个物品来祝福",
     "Select Dungeon": "选择地下城",
