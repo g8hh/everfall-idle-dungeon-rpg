@@ -25464,11 +25464,12 @@ item.getStatsDisplay = function() {
             }
 
             // Get player name with uniqueness check
-            let playerName = localStorage.getItem('playerName');
+            // let playerName = localStorage.getItem('playerName');
+            let playerName = "Gityx" + Math.floor(Math.random() * 10000) + 1;
             if (!playerName) {
                 let nameExists = true;
                 while (nameExists) {
-                    playerName = prompt('请输入一个独特名字以显示在排行榜上:');
+                    // playerName = prompt('请输入一个独特名字以显示在排行榜上:');
                     if (!playerName || playerName.trim() === '') {
                         playerName = 'Anonymous_' + Math.floor(Math.random() * 10000);
                         nameExists = false;
